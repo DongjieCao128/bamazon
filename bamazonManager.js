@@ -39,6 +39,21 @@ function function2() {
       
 
   });
+};
+function function3(){
+  connection.query("UPDATE products SET stock_quantity = 100 WHERE id <5;", function (error, results) {
+    if (error) throw error;
+    inquirer.prompt([
+      {
+        name: "question",
+        type: "input",
+        message: "Would you like to add more inventory???"
+      }
+
+    ]).then(function(res){
+      console.log(res);
+    })
+      });
 }
 function question() {
   inquirer
